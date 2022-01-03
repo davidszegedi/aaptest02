@@ -1,0 +1,20 @@
+---
+create_vmware_guest_task: True
+
+var_vmname: "{{ instance_name }}"
+var_state: "present"
+var_force: "no"
+var_disk_size_gb: 16
+var_disk_type: "thin"
+var_disk_datastore: "{{ datastore_name }}"
+var_nic1_type: "vmxnet3"
+var_nic1_network: "{{ network_name }}"
+var_nic1_network_type: "standard"
+var_vm_hw_memory_mb: 2048
+var_vm_hw_num_cpus: 2
+var_vm_hw_num_cpu_cores_per_socket: 2
+var_vm_template: "{{ template_name }}"
+var_vm_hw_scsi: "paravirtual"
+var_datacenter: "{{ datacenter_name }}"
+var_vm_folder: "{{ folder_name }}"
+var_cluster: "{{ cluster_name }}"

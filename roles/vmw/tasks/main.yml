@@ -1,0 +1,4 @@
+---
+- name: Includes create vmware guest task
+  include_tasks: "create_vmware_guest.yml"
+  when: create_vmware_guest_task == True
