@@ -37,13 +37,13 @@
   delegate_to: localhost
   register: deployvm
 
-- name: Add nic to Vm
-  vmware_guest_network:
-    validate_certs: no
-    datacenter: "{{ var_datacenter }}"
-    name: "{{ var_vmname }}"
-    network_name: "{{ var_nic1_network }}"
-    connected: yes
-    start_connected: yes
-  delegate_to: localhost
-  register: deploynetwork
+#- name: Add nic to Vm
+#  vmware_guest_network:
+#    validate_certs: no
+#    datacenter: "{{ var_datacenter }}"
+#    name: "{{ var_vmname }}"
+#    network_name: "{{ var_nic1_network }}"
+#    connected: yes
+#    start_connected: yes
+#  delegate_to: localhost
+#  register: deploynetwork
