@@ -1,0 +1,12 @@
+---
+- name: Update a virtual machine state
+  vmware_guest:
+    validate_certs: no
+    datacenter: "{{ var_datacenter }}"
+    cluster: "{{ var_cluster }}"
+    folder: "{{ var_vm_folder }}"
+    name: "{{ var_vmname }}"
+    state: "{{ var_state }}"
+    force: "{{ var_force }}"
+  delegate_to: localhost
+  register: deployvm

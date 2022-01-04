@@ -1,0 +1,13 @@
+---
+- name: Deploy VM on Vmware
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    instance_name: "dummy"
+
+  roles:
+    - role: vmw
+      #instance_role: "undefined"
+      update_vmware_guest_task: True
