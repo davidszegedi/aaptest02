@@ -32,6 +32,7 @@
     networks:
     - name: "{{ var_nic1_network }}"
       connected: yes
+      start_connected: yes
     wait_for_ip_address: yes
   delegate_to: localhost
   register: deploy
