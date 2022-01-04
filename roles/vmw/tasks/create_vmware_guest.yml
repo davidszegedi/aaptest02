@@ -29,10 +29,21 @@
       hotadd_memory: False
       #version: 12 # Hardware version of virtual machine
       #boot_firmware: "efi"
-    networks:
-    - name: "{{ var_nic1_network }}"
-      connected: yes
-      start_connected: yes
-    wait_for_ip_address: yes
+#    networks:
+#    - name: "{{ var_nic1_network }}"
+#      connected: yes
+#      start_connected: yes
+#    wait_for_ip_address: yes
   delegate_to: localhost
-  register: deploy
+  register: deployvm
+
+- name: Add nic to Vm
+  vmware_guest_network:
+    validate_certs: no
+    datacenter: "{{ var_datacenter }}"
+    name: "{{ var_vmname }}"
+    network_name: "{{ var_nic1_network }}"
+    connected: yes
+    start_connected: yes
+  delegate_to: localhost
+  register: deploynetwork
