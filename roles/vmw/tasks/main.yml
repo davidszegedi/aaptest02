@@ -4,5 +4,5 @@
   when: create_vmware_guest_task == True
 
 - name: Includes update vmware guest task
-  include_tasks: "create_vmware_guest.yml"
+  include_tasks: "update_vmware_guest.yml"
   when: update_vmware_guest_task == True
