@@ -6,8 +6,9 @@
 
   vars:
     instance_name: "dummy"
-  
+
   roles:
     - role: vmw
       #instance_role: "undefined"
       create_vmware_guest_task: True
+      update_vmware_guest_task: False
