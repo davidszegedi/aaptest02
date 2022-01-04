@@ -1,5 +1,14 @@
 ---
-create_vmware_guest_task: True
+create_vmware_guest_task: False
+update_vmware_guest_task: False
+
+instance_name: "dummy"
+datastore_name: "dummy"
+network_name: "dummy"
+template_name: "dummy"
+datacenter_name: "dummy"
+folder_name: "dummy"
+cluster_name: "dummy"
 
 var_vmname: "{{ instance_name }}"
 var_state: "present"
