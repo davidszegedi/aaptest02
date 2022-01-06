@@ -1,0 +1,9 @@
+---
+
+- name: Include Satellite Subcription tasks
+  include: task-attach-sub-sat.yml
+  when: var_sat == 'enabled'
+
+- name: Include Subcription tasks
+  include: task-attach-sub.yml
+  when: var_sat == 'disabled'
