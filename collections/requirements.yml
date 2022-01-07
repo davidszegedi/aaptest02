@@ -13,4 +13,4 @@ collections:
 
 roles:
 - name: jws
-  source: https://galaxy.ansible.com
+  source: https://github.com/ansible-middleware/jws-ansible-playbook.git
