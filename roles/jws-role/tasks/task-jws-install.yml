@@ -1,7 +1,7 @@
 ---
 - name: "Red Hat JBoss Web Server installation and configuration"
   roles:
-    - jws
+    - role: jws
 #    - common_criteria
   post_tasks:
     - name: "Ensure Tomcat is started and listen to appropriate port"
