@@ -1,4 +1,4 @@
 ---
 roles:
-- name: jws
+- name: middleware_automation.jws
   source: https://galaxy.ansible.com
