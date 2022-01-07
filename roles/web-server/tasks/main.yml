@@ -1,0 +1,5 @@
+---
+
+- name: Include Web server deployment task
+  include_tasks: task-deploy-web.yml
+  when: var_deploy_web == 'enabled'

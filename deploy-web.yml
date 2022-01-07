@@ -1,0 +1,7 @@
+---
+- name: Deploy a Web server
+  hosts: all
+  gather_facts: false
+
+  roles:
+    - role: web-server

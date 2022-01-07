@@ -1,0 +1,46 @@
+---
+- name: Install web packages
+  dnf:
+    name: "{{ web_packages }}"
+    state: present
+
+- name: Install index page
+  template:
+    src: "{{ index_src }}"
+    dest: /var/www/html/index.php
+    backup: yes
+
+- name: Install app
+  copy:
+    src: "{{ item }}"
+    dest: /var/www/html
+  with_fileglob:
+          - ../files/fonts/
+          - ../files/*
+
+- name: Start firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Open firewall ports
+  firewalld:
+    state: enabled
+    zone: public
+    immediate: true
+    service: "{{ item }}"
+    permanent: true
+  with_items: "{{ firewall_services_web }}"
+
+- name: Configure SELinux
+  seboolean:
+    state: yes
+    name: httpd_can_network_connect
+    persistent: yes
+
+- name: Check that web server is reachable
+  uri:
+    url: "http://{{ ansible_ssh_host }}"
+    status_code: 200
+  ignore_errors: yes

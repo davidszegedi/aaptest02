@@ -1,0 +1,35 @@
+---
+var_deploy_web: enabled
+
+vmweb: "{{ inventory_hostname }}"
+vmdb: "{{ vmweb }}"
+dbname: "dbname"
+dbuser: "dbusername"
+dbpass: "dbpass"
+lib_db: "mariadb-libs"
+
+web_packages:
+  - httpd
+  - php
+  - php-mysqlnd
+  - php-pdo
+  - php-gd
+  - php-mbstring
+  - python3-libsemanage
+  - firewalld
+
+index_src: "jinja2/index.php.j2"
+
+firewall_services_web:
+  - http
+  - https
+
+db_packages:
+  - mariadb
+  - mariadb-server
+  - MySQL-python
+  - php-mysql
+  - firewalld
+
+firewall_services_db:
+  - mysql
