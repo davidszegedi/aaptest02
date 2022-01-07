@@ -2,7 +2,7 @@
 - name: "Red Hat JBoss Web Server installation and configuration"
   include_role:
     name: jws
-#    - common_criteria
+
 
 - name: "Ensure Tomcat is started and listen to appropriate port"
   wait_for:
