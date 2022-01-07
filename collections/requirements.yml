@@ -11,6 +11,6 @@ collections:
 #- name: middleware_automation.redhat_csp_download
 #  source: https://galaxy.ansible.com
 
-roles:
-- name: jws
-  source: https://github.com/ansible-middleware/jws-ansible-playbook.git
+#roles:
+#- name: jws
+#  source: https://github.com/ansible-middleware/jws-ansible-playbook.git

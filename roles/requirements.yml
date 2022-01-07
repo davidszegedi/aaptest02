@@ -1,0 +1,4 @@
+---
+roles:
+- name: jws
+  source: https://github.com/ansible-middleware/jws-ansible-playbook.git
