@@ -1,4 +1,11 @@
 ---
-var_sat: disabled
-var_activationkey: ""
-var_org_id: ""
+var_jws_install: enabled
+#
+tomcat_setup: true
+tomcat_systemd_enabled: True
+tomcat_service_name: tomcat
+tomcat_install_method: rpm
+tomcat_home: /opt/rh/jws5/root/usr/share/tomcat/
+tomcat_java_version: 1.8.0
+override_tomcat_listen_http_bind_address: 127.0.0.1
+ansible_distribution: 'RedHat'

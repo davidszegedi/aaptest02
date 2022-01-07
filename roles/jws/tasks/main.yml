@@ -1,9 +1,5 @@
 ---
 
-- name: Include Satellite Subcription tasks
-  include_tasks: task-attach-sub-sat.yml
-  when: var_sat == 'enabled'
-
-- name: Include Subcription tasks
-  include_tasks: task-attach-sub.yml
-  when: var_sat == 'disabled'
+- name: Include Jws install tasks
+  include_tasks: task-jws-install.yml
+  when: var_jws_install == 'enabled'

@@ -8,5 +8,5 @@ collections:
   source: https://galaxy.ansible.com
 - name: middleware_automation.jws
   source: https://galaxy.ansible.com
-- name: middleware_automation.redhat_csp_download
-  source: https://galaxy.ansible.com
+#- name: middleware_automation.redhat_csp_download
+#  source: https://galaxy.ansible.com

@@ -1,17 +1,19 @@
 ---
-#    - name: Ansible remove file
-#      file:
-#        path: "/etc/yum.repos.d/rhel.repo"
-#        state: absent
+- name: "Red Hat JBoss Web Server installation and configuration"
+  roles:
+    - jws
+#    - common_criteria
+  post_tasks:
+    - name: "Ensure Tomcat is started and listen to appropriate port"
+      wait_for:
+        host: "{{ override_tomcat_listen_http_bind_address }}"
+        port: "8080"
+      when:
+        - tomcat_systemd_enabled is defined
 
-#    - name: Ansible remove file
-#      file:
-#        path: "/etc/yum.repos.d/redhat.repo"
-#        state: absent
-
-    - name: Red Hat registration with activation key
-      redhat_subscription:
-        state: present
-        activationkey: "{{ var_activationkey }}"
-        org_id: "{{  var_org_id }}"
-      ignore_errors: True
+    - name: "Ensure Tomcat is started and listen to appropriate port"
+      wait_for:
+        host: "{{ override_tomcat_listen_http_bind_address }}"
+        port: "6666"
+      when:
+        - modcluster_todo is defined
