@@ -1,19 +1,12 @@
 ---
 - name: "Red Hat JBoss Web Server installation and configuration"
-  roles:
-    - role: jws
+  include_role:
+    name: jws
 #    - common_criteria
-  post_tasks:
-    - name: "Ensure Tomcat is started and listen to appropriate port"
-      wait_for:
-        host: "{{ override_tomcat_listen_http_bind_address }}"
-        port: "8080"
-      when:
-        - tomcat_systemd_enabled is defined
 
-    - name: "Ensure Tomcat is started and listen to appropriate port"
-      wait_for:
-        host: "{{ override_tomcat_listen_http_bind_address }}"
-        port: "6666"
-      when:
-        - modcluster_todo is defined
+- name: "Ensure Tomcat is started and listen to appropriate port"
+  wait_for:
+    host: "{{ override_tomcat_listen_http_bind_address }}"
+    port: "8080"
+  when:
+    - tomcat_systemd_enabled is defined
