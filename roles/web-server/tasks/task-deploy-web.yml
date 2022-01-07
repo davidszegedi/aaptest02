@@ -39,6 +39,12 @@
     name: httpd_can_network_connect
     persistent: yes
 
+- name: Start httpd service
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+
 - name: Check that web server is reachable
   uri:
     url: "http://{{ ansible_ssh_host }}"
