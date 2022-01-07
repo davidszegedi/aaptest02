@@ -1,7 +1,7 @@
 ---
-- name: "Red Hat JBoss Web Server installation and configuration"
-  include_role:
-    name: jws
+#- name: "Red Hat JBoss Web Server installation and configuration"
+#  include_role:
+#    name: jws
 
 - name: "Ensure Tomcat is started and listen to appropriate port"
   wait_for:
