@@ -12,11 +12,8 @@
 
 - name: Install app
   copy:
-    src: "{{ item }}"
+    src: "{{ file_src }}"
     dest: /var/www/html
-  with_fileglob:
-          - files/fonts/
-          - files/*
 
 - name: Start firewalld
   service:
