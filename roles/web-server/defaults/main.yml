@@ -29,9 +29,9 @@ firewall_services_web:
 db_packages:
   - mariadb
   - mariadb-server
-  - MySQL-python
-  - php-mysql
-  - firewalld
+#  - MySQL-python
+#  - php-mysql
+#  - firewalld
 
 firewall_services_db:
   - mysql
