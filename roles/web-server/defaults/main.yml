@@ -19,7 +19,7 @@ web_packages:
   - firewalld
 
 index_src: "jinja2/index.php.j2"
-file_src: "files"
+file_src: "files/"
 
 firewall_services_web:
   - http

@@ -13,7 +13,7 @@
 - name: Install app
   copy:
     src: "{{ file_src }}"
-    dest: /var/www/
+    dest: /var/www/html/
 
 - name: Start firewalld
   service:
