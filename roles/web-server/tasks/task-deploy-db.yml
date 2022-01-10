@@ -1,0 +1,46 @@
+---
+- name: Install db packages
+  dnf:
+    name: "{{ db_packages }}"
+    state: present
+
+- name: Start firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Open firewall ports
+  firewalld:
+    state: enabled
+    zone: public
+    immediate: true
+    service: "{{ item }}"
+    permanent: true
+  with_items: "{{ firewall_services_db }}"
+
+- name: Configure MariDB settings
+  template:
+    src: "{{ networkcnf_src }}"
+    dest: /etc/my.cnf.d/network.cnf
+    backup: yes
+
+- name: Start MariaDB service
+  service:
+    name: mariadb
+    enabled: yes
+    state: started
+
+- name: Create Database
+  mysql_db:
+    name: '{{ dbname }}'
+    encoding: utf8
+    state: present
+
+- name: Create database users
+  mysql_user:
+    name: '{{ dbuser }}'
+    state: present
+    host: '%'
+    password: '{{ dbpass }}'
+    priv: '*.*:ALL'

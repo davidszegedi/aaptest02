@@ -1,5 +1,6 @@
 ---
 var_deploy_web: enabled
+var_deploy_db: enabled
 
 vmweb: "{{ inventory_hostname }}"
 vmdb: "{{ vmweb }}"
@@ -34,3 +35,5 @@ db_packages:
 
 firewall_services_db:
   - mysql
+
+networkcnf_src: "jinja2/etc_my.cnf.d_network.cnf.j2"
