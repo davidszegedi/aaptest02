@@ -1,0 +1,9 @@
+---
+
+- name: Include Reboot Srv tasks
+  include_tasks: task-reboot-srv.yml
+  when: var_reboot_srv == 'enabled'
+
+- name: Include Shell Srv tasks
+  include_tasks: task-shell-srv.yml
+  when: var_shell_srv == 'enabled'

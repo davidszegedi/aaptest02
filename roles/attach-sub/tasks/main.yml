@@ -6,4 +6,4 @@
 
 - name: Include Subcription tasks
   include_tasks: task-attach-sub.yml
-  when: var_sat == 'disabled'
+  when: var_rhn == 'enabled'

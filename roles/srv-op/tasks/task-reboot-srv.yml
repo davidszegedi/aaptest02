@@ -1,0 +1,4 @@
+---
+- name: "Reboot a machine with {{ var_reboot_timeout }} seconds timeout"
+  reboot:
+    reboot_timeout: "{{ var_reboot_timeout }}"

@@ -1,4 +1,5 @@
 ---
 var_sat: disabled
+var_rhn: enabled
 var_activationkey: ""
 var_org_id: ""

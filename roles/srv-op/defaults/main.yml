@@ -1,0 +1,6 @@
+---
+var_reboot_srv: enabled
+var_shell_srv: disabled
+
+var_reboot_timeout: 120
+var_shell_command: "reboot"
