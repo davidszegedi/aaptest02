@@ -1,7 +1,7 @@
 ---
 - name: Attach subscription to vm
-  hosts: all
+  hosts: "{{ instance_name }}"
   gather_facts: false
 
   roles:
-    - role: attach-sub
+    - role: srv-op

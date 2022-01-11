@@ -1,0 +1,7 @@
+---
+- name: Deploy a Web server
+  hosts: "{{ instance_name }}"
+  gather_facts: false
+
+  roles:
+    - role: web-server
