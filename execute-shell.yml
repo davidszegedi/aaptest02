@@ -7,5 +7,6 @@
   vars:
     var_shell_command: "echo dummy"
 
-  name: "Execute shell command: {{ var_shell_command }}"
-  shell: "{{ var_shell_command }}"
+  tasks:
+    - name: "Execute shell command: {{ var_shell_command }}"
+      shell: "{{ var_shell_command }}"
