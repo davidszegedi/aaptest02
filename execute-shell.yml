@@ -1,0 +1,11 @@
+---
+- name: Execute shell command
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    var_shell_command: "echo dummy"
+
+  name: "Execute shell command: {{ var_shell_command }}"
+  shell: "{{ var_shell_command }}"
