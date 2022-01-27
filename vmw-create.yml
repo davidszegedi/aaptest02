@@ -10,5 +10,5 @@
   roles:
     - role: vmw
       #instance_role: "undefined"
-      create_vmware_guest_task: True
-      update_vmware_guest_task: False
+      vmw_create_vmware_guest_task: True
+      vmw_update_vmware_guest_task: False
