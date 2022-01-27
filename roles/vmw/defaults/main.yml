@@ -1,6 +1,6 @@
 ---
-create_vmware_guest_task: False
-update_vmware_guest_task: False
+vmw_create_vmware_guest_task: False
+vmw_update_vmware_guest_task: False
 
 instance_name: "dummy"
 datastore_name: "dummy"
@@ -10,20 +10,20 @@ datacenter_name: "dummy"
 folder_name: "dummy"
 cluster_name: "dummy"
 
-var_vmname: "{{ instance_name }}"
-var_state: "present"
-var_force: "no"
-var_disk_size_gb: 16
-var_disk_type: "thin"
-var_disk_datastore: "{{ datastore_name }}"
-var_nic1_type: "vmxnet3"
-var_nic1_network: "{{ network_name }}"
-var_nic1_network_type: "standard"
-var_vm_hw_memory_mb: 2048
-var_vm_hw_num_cpus: 2
-var_vm_hw_num_cpu_cores_per_socket: 2
-var_vm_template: "{{ template_name }}"
-var_vm_hw_scsi: "paravirtual"
-var_datacenter: "{{ datacenter_name }}"
-var_vm_folder: "{{ folder_name }}"
-var_cluster: "{{ cluster_name }}"
+vmw_vmname: "{{ instance_name }}"
+vmw_state: "present"
+vmw_force: "no"
+vmw_disk_size_gb: 16
+vmw_disk_type: "thin"
+vmw_disk_datastore: "{{ datastore_name }}"
+vmw_nic1_type: "vmxnet3"
+vmw_nic1_network: "{{ network_name }}"
+vmw_nic1_network_type: "standard"
+vmw_vm_hw_memory_mb: 2048
+vmw_vm_hw_num_cpus: 2
+vmw_vm_hw_num_cpu_cores_per_socket: 2
+vmw_vm_template: "{{ template_name }}"
+vmw_vm_hw_scsi: "paravirtual"
+vmw_datacenter: "{{ datacenter_name }}"
+vmw_vm_folder: "{{ folder_name }}"
+vmw_cluster: "{{ cluster_name }}"

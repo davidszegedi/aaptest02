@@ -2,22 +2,22 @@
 - name: Create a virtual machine from a template
   vmware_guest:
     validate_certs: no
-    datacenter: "{{ var_datacenter }}"
-    cluster: "{{ var_cluster }}"
-    folder: "{{ var_vm_folder }}"
-    name: "{{ var_vmname }}"
-    state: "{{ var_state }}"
-    force: "{{ var_force }}"
-    template: "{{ var_vm_template }}"
+    datacenter: "{{ vmw_datacenter }}"
+    cluster: "{{ vmw_cluster }}"
+    folder: "{{ vmw_vm_folder }}"
+    name: "{{ vmw_vmname }}"
+    state: "{{ vmw_state }}"
+    force: "{{ vmw_force }}"
+    template: "{{ vmw_vm_template }}"
     disk:
-    - size_gb: "{{ var_disk_size_gb }}"
-      type: "{{ var_disk_type }}"
-      datastore: "{{ var_disk_datastore }}"
+    - size_gb: "{{ vmw_disk_size_gb }}"
+      type: "{{ vmw_disk_type }}"
+      datastore: "{{ vmw_disk_datastore }}"
     hardware:
-      memory_mb: "{{ var_vm_hw_memory_mb }}"
-      num_cpus: "{{ var_vm_hw_num_cpus }}"
-      num_cpu_cores_per_socket: "{{ var_vm_hw_num_cpu_cores_per_socket }}"
-      scsi: "{{ var_vm_hw_scsi }}"
+      memory_mb: "{{ vmw_vm_hw_memory_mb }}"
+      num_cpus: "{{ vmw_vm_hw_num_cpus }}"
+      num_cpu_cores_per_socket: "{{ vmw_vm_hw_num_cpu_cores_per_socket }}"
+      scsi: "{{ vmw_vm_hw_scsi }}"
       #memory_reservation_lock: True
       #mem_limit: 8096
       #mem_reservation: 4096
@@ -30,7 +30,7 @@
       #version: 12 # Hardware version of virtual machine
       #boot_firmware: "efi"
 #    networks:
-#    - name: "{{ var_nic1_network }}"
+#    - name: "{{ vmw_nic1_network }}"
 #      connected: yes
 #      start_connected: yes
 #    wait_for_ip_address: yes
@@ -40,9 +40,9 @@
 #- name: Add nic to Vm
 #  vmware_guest_network:
 #    validate_certs: no
-#    datacenter: "{{ var_datacenter }}"
-#    name: "{{ var_vmname }}"
-#    network_name: "{{ var_nic1_network }}"
+#    datacenter: "{{ vmw_datacenter }}"
+#    name: "{{ vmw_vmname }}"
+#    network_name: "{{ vmw_nic1_network }}"
 #    connected: yes
 #    start_connected: yes
 #  delegate_to: localhost
