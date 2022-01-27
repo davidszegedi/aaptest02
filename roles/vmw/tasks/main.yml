@@ -6,3 +6,4 @@
 - name: Includes update vmware guest task
   include_tasks: "update_vmware_guest.yml"
   when: vmw_update_vmware_guest_task == True
+  

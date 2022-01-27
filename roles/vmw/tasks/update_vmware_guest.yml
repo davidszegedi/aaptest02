@@ -10,3 +10,4 @@
     force: "{{ vmw_force }}"
   delegate_to: localhost
   register: deployvm
+  
