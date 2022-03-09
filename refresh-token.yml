@@ -1,0 +1,14 @@
+---
+- name: Refresh Cloud Automation Hub access token
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    var_client_id: "dummy_client_id"
+    var_token: "dummy_token"
+    var_endpoint: "dummy_endpoint"
+
+  tasks:
+    - name: "Execute refresh token command"
+      shell: "curl {{ var_endpoint }} -d grant_type=refresh_token -d client_id={{ var_client_id }} -d refresh_token={{ var_token }} --fail --show-error"
