@@ -12,3 +12,8 @@
   tasks:
     - name: "Execute refresh token command"
       shell: "curl {{ var_endpoint }} -d grant_type=refresh_token -d client_id={{ var_client_id }} -d refresh_token={{ var_token }} --fail --show-error"
+      register: shell_stdout
+
+    - name: Print shell stdout
+      debug:
+        msg: "Shell stdout: {{ shell_stdout }}"
