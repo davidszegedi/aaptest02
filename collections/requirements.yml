@@ -8,6 +8,7 @@ collections:
   source: https://galaxy.ansible.com
 - name: redhat.demo_collection
   source: https://aap-ah01.infra.dszlab.net
+  version: "1.0.0"
 #- name: middleware_automation.common_criteria
 #  source: https://galaxy.ansible.com
 #- name: middleware_automation.jws
