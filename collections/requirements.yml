@@ -7,7 +7,7 @@ collections:
 - name: community.mysql
   source: https://galaxy.ansible.com
 - name: redhat.demo_collection
-  source: aap-ah01.infra.dszlab.net
+  source: https://aap-ah01.infra.dszlab.net
 #- name: middleware_automation.common_criteria
 #  source: https://galaxy.ansible.com
 #- name: middleware_automation.jws
